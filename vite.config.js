@@ -6,9 +6,9 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://demo-api.syaifur.io', // Ganti dengan URL API Anda
+        target: 'http://demo-api.syaifur.io', // Base URL API Anda
         changeOrigin: true,
-        secure: false, // Matikan SSL verification jika menggunakan HTTP
+        rewrite: (path) => path.replace(/^\/api/, ''), // Hapus prefix '/api' sebelum mengirimkan ke server
       },
     },
   },
