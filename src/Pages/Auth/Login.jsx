@@ -21,7 +21,7 @@ const Login = () => {
 
   const throttledLogin = throttle(async (data) => {
     try {
-      const response = await axios.post("/api/login", data);
+      const response = await axios.post("http://demo-api.syaifur.io/api/api/login", data);
       if (response.status === 200) {
         const { user, token } = response.data.data;
         
