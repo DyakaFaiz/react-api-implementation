@@ -4,9 +4,9 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://demo-api.syaifur.io', // API HTTP
-        changeOrigin: true, // Untuk mengatasi CORS
-        rewrite: (path) => path.replace(/^\/api/, ''), // Opsional, sesuaikan rute
+        target: 'http://demo-api.syaifur.io', 
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
   },
