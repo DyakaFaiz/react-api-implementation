@@ -21,14 +21,12 @@ const Login = () => {
 
   const throttledLogin = throttle(async (data) => {
     try {
-      const response = await axios.post("http://demo-api.syaifur.io/api/login", data);
+      const response = await axios.post("/api/login", data);
       if (response.status === 200) {
         const { user, token } = response.data.data;
         
-        // Simpan ke Redux
         dispatch(login({ user, token }));
   
-        // Simpan ke localStorage agar data bertahan setelah refresh
         localStorage.setItem("token", token);
         localStorage.setItem("user", JSON.stringify(user));
   
